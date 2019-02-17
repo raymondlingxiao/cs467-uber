@@ -50,7 +50,21 @@ for start_point in start_points:
 for end_point in end_points:
     map.marker(end_point[0],end_point[1],'indianred')
 
-map.draw("map4.html")
+
+heat_map_points = start_points+end_points
+
+heat_map_lats,heat_map_lngs  = zip(*heat_map_points)
+
+
+# map.draw("map4.html")
+
+map.heatmap(heat_map_lats,heat_map_lngs,threshold=100,radius=60,opacity=0.6)
+
+map.draw("map5.html")
+
+
+
+
 
 
 # another library
