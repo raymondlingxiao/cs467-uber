@@ -28,3 +28,25 @@ for pair in data:
     map.plot(pair[0],pair[1],color, edge_width = 3)
 
 map.draw("my_map3.html")
+
+
+# another library
+# import googlemaps
+# from datetime import datetime
+
+# gmaps = googlemaps.Client(key='AIzaSyCLV6iOyD6d60RXPgpzMf4baAy8ZqjCdYE')
+
+# # Geocoding and address
+# geocode_result = gmaps.geocode('1600 Amphitheatre Parkway, Mountain View, CA')
+
+# # Look up an address with reverse geocoding
+# reverse_geocode_result = gmaps.reverse_geocode((40.714224, -73.961452))
+
+# # Request directions via public transit
+# now = datetime.now()
+# directions_result = gmaps.directions("Sydney Town Hall",
+#                                      "Parramatta, NSW",
+#                                      mode="transit",
+#                                      departure_time=now)
+
+# print(geocode_result)
