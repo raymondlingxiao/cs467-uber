@@ -3647,7 +3647,8 @@ heatmap.set('dissipating', true);
 	<div id="button-wrapper">
 		<button type="button" class="btn btn-primary" id="next">Move Next</button>
 		<button type="button" class="btn btn-primary" id="up">Move Up</button>
-		<button type="button" class="btn btn-primary">Hello</button>
+		<button type="button" class="btn btn-primary" id = "bar">Data Analysis</button>
+	</button>
 	</div>
 </div>
 </body>
@@ -3656,6 +3657,7 @@ heatmap.set('dissipating', true);
 	locations.push([40.110588, -88.207270],[25.761680, -80.191790],[28.4114555,-81.4638934],[18.7746292, 98.9765261]);
 	let next = document.getElementById("next");
 	let up = document.getElementById("up");
+	let bar = document.getElementById("bar")
 	var index = 0;
 	next.addEventListener("click",function () {
 		index ++;
@@ -3671,6 +3673,9 @@ heatmap.set('dissipating', true);
 			index = locations.length-1;
 		locationPrev = locations[index];
 		initialize(true,locationPrev);
-	})
+	});
+	bar.onclick = function() {
+	  window.location.replace("Data Analysis.html");
+	}
 </script>
 </html>
