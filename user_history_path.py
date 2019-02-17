@@ -7,6 +7,7 @@ map = gp.GoogleMapPlotter(40.1105875,-88.2072697,13,apikey="AIzaSyCLV6iOyD6d60RX
 
 path = "trips_data.csv"
 
+path_corider = "trips_data_Xiaolu.csv"
 data = []
 
 
@@ -27,7 +28,29 @@ for pair in data:
     color = '#%02X%02X%02X' % (r(), r(), r())
     map.plot(pair[0],pair[1],color, edge_width = 3)
 
-map.draw("my_map3.html")
+
+# draw
+start_points = []
+end_points = []
+
+with open(path_corider) as file:
+    reader = csv.reader(file)
+    headers = next(reader)
+
+    for row in reader:
+        start_point = (float(row[0]),float(row[1]))
+        end_point = (float(row[2]),float(row[3]))
+        start_points.append(start_point)
+        end_points.append(end_point)
+
+
+for start_point in start_points:
+    map.marker(start_point[0],start_point[1],'cornflowerblue')
+
+for end_point in end_points:
+    map.marker(end_point[0],end_point[1],'indianred')
+
+map.draw("map4.html")
 
 
 # another library
