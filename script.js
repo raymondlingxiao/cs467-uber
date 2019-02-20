@@ -3978,7 +3978,7 @@ function initialize(flag, nextPos) {
 		initialize(true, locationPrev);
 	};
 	const barHandler = () => {
-		window.location.replace("Data Analysis.html");
+		window.location.href = "Data Analysis.html";
 	};
 	const strokeHandler = () => {
 		if (stroke.innerHTML === "Show Personal Route") {
