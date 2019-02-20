@@ -3947,7 +3947,7 @@ function initialize(flag, nextPos) {
     
 	heatmap.setMap(map);
 	heatmap.set("threshold", 100);
-	heatmap.set("radius", 150);
+	heatmap.set("radius", 200);
 	heatmap.set("opacity", 0.6);
 	heatmap.set("dissipating", true);
 
