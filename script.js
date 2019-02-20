@@ -1,3 +1,5 @@
+let index = 0;
+
 function initialize(flag, nextPos) {
 	var lineSymbol = {
 		path: "M 0,-1 0,1",
@@ -3962,10 +3964,10 @@ function initialize(flag, nextPos) {
 	const stroke = document.getElementById("stroke");
 	const markerButton = document.getElementById("marker");
 	const heatButton = document.getElementById("heat");
-	let index = 0;
 
 	const nextHandler = () => {
-		index++;
+        index++;
+        console.log(index);
 		if (index >= locations.length) index = 0;
 		locationNext = locations[index];
 		initialize(true, locationNext);
