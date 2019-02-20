@@ -3939,13 +3939,13 @@ function initialize(flag, nextPos) {
 	];
 
 	var pointArray = new google.maps.MVCArray(heatmap_points);
-	var heatmap;
-	heatmap = new google.maps.visualization.HeatmapLayer({
+	var heatmap = new google.maps.visualization.HeatmapLayer({
 		data: pointArray
-	});
+    });
+    
 	heatmap.setMap(map);
 	heatmap.set("threshold", 100);
-	heatmap.set("radius", 200);
+	heatmap.set("radius", 150);
 	heatmap.set("opacity", 0.6);
 	heatmap.set("dissipating", true);
 
