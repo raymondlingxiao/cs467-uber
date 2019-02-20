@@ -3967,7 +3967,6 @@ function initialize(flag, nextPos) {
 
 	const nextHandler = () => {
         index++;
-        console.log(index);
 		if (index >= locations.length) index = 0;
 		locationNext = locations[index];
 		initialize(true, locationNext);
@@ -3982,7 +3981,6 @@ function initialize(flag, nextPos) {
 		window.location.replace("Data Analysis.html");
 	};
 	const strokeHandler = () => {
-		console.log("clicked");
 		if (stroke.innerHTML === "Show Personal Route") {
 			stroke.innerHTML = "Hide Personal Route";
 			for (let i = 0; i < paths.length; i++) {
