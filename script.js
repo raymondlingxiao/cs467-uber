@@ -4016,8 +4016,8 @@ function initialize(flag, nextPos) {
 		}
 	};
 
-	markerButton.innerHTML = "Hide Marker";
-	stroke.innerHTML = "Hide Stroke";
+	markerButton.innerHTML = "Hide Friend Marker";
+	stroke.innerHTML = "Hide Personal Route";
 	heatButton.innerHTML = "Hide Heat Map";
 
 	next.onclick = nextHandler;
