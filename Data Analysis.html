@@ -1,164 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
-<div class = "window2" id = "w2">
+   <head>
+      <link
+         rel="stylesheet"
+         href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+         crossorigin="anonymous"/>
+      
+      <style type="text/css" media="screen">
+          body,
+          html {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin: 0;
+              background-color: rgba(45, 45, 45, 0.98);
+              color: white;
+              font-family: "Avenir", Helvetica, sans-serif;
+              height: 100%;
+              width: 100%;
+          }
 
-  <div id="Slideshow">
-    <h1>Data Analysis</h1>
-    <div id="Slider">
-      <img src="figs/1.png" class = "galaxy"/>
-      <img src="figs/2.png" class = "galaxy"/>
-      <img src="figs/3.png" class = "galaxy"/>
-      <img src="figs/4.png" class = "galaxy"/>
-    </div>
-    <div id="Arrows">
-      <i id="Prev" class="fa fa-chevron-left fa-2x" aria-hidden="true"></i>
-      <i id="Next" class="fa fa-chevron-right fa-2x" aria-hidden="true"></i>
-    </div>
-    <script type = "text/javascript">
-    //##############Slideshow
-    var slideIndex = 1;
+          .window2 {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 100%;
+              width: 100%;
+              padding: 20px;
+              height: 95%;
+          }
 
-    //The showSlides(n) function code is from  ##################
-    function showSlides(n) {
-        var slides = document.getElementsByClassName("galaxy");
-        if (n > slides.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = slides.length}
-        var i;
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        slides[slideIndex-1].style.display = "block";
-    }
-    //The showSlides(n) function code is from https://www.w3schools.com/howto/howto_js_slideshow.asp ##################
+          #header-container {
+              height: 10%;
+              margin: 0;
+              padding: 0;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+          }
 
-    showSlides(slideIndex);
-    function plusSlides() {
-        showSlides(slideIndex += 1);
-    }
-    function minusSlides() {
-        showSlides(slideIndex -= 1);
-    }
-    document.getElementById("Prev").addEventListener("click", minusSlides);
-    document.getElementById("Next").addEventListener("click", plusSlides);
+          #header-container h1 {
+              font-size: 2.5em;
+              padding: 20px;
+              margin: 0;
+          }
 
-    </script>
-    <style type="text/css" media="screen">
+          #Slideshow {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              height: 100%;
+              width: 100%;
+          }
 
-    .window2{
-      position: absolute;
-      top:0px;
-      height:800px;
-      width:100%;
+          #img-container {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 80%;
+              width: 1200px;
+              flex-direction: column;
+          }
 
-    }
+          .slider-container {
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              height: 50%;
+              width: 70%;
+          }
 
-    #Wrapper{
-    	align-items: center;
-    	background-color: #EEEFF7;
-    	display: flex;
-    	height: 600px;
-    	justify-content: center;
-    	width: 1000px;
-    }
+          .slider-container h2 {
+              font-size: 1.5em;
+              padding: 20px;
+              width: 30%;
+              text-align: center;
+          }
 
-    #Slideshow{
-    	align-items: center;
-    	display: flex;
-    	flex-direction: column;
-    	justify-content: center;
-    	overflow: hidden;
-    	position: relative;
-    }
+          .imgs {
+              height: 100%;
+              width: 70%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+          }
 
-    #Slider{
-    	border: 20px solid #1C1D21;
-    	height: 500px;
-    	overflow: hidden;
-    	width: 800px;
-    }
+          .imgs img {
+              display: block;
+              width: auto;
+              max-height: 95%;
+          }
 
-    #Slider img{
-      top:100px;
-    	height: 400px;
-    	width: 100%;
-    	transition: all 1s;
-    }
+          #Arrows {
+              display: flex;
+              justify-content: space-evenly;
+              align-items: center;
+              height: 10%;
+              width: 30%;
+          }
 
-    #Arrows{
-    	display: flex;
-    	justify-content: space-between;
-    	height: 30px;
-    	position: absolute;
-      top:55%;
-    	width: 800px;
-    }
+          #Arrows i {
+              cursor: pointer;
+              padding: 15px;
+              font-size: 25px;
+              transition: background-color .5s, color .5s;
+              border-radius: 5px;
+          }
 
-    #Arrows i{
-    	background-color: rgba(255, 255, 255, .25);
-    	color: #1C1D21;
-    	cursor: pointer;
-    	height: 30px;
-    	padding: 15px;
+          #Arrows i:first-of-type {
+              padding-right: 20px;
+          }
 
-    //	transition: background-color .5s, color .5s;
-    }
+          #Arrows i:last-of-type {
+              padding-left: 20px;
+          }
 
-    #Arrows i:first-of-type{
-    	padding-right: 20px;
-    }
+          #Arrows i:hover {
+              background-color: #6bf;
+          }
 
-    #Arrows i:last-of-type{
-    	padding-left: 20px;
-    }
-
-    #Arrows i:hover{
-    	background-color: rgba(28,29,33, .75);
-    	color: #EEEFF7;
-    }
-
-    h1{
-    	color: #1C1D21;
-    	font-family: righteous;
-    	font-size: 2.5em;
-    	padding: 20px;
-    }
-
-    h2{
-    	color: #1C1D21;
-    	font-family: "Open Sans";
-    	font-size: 1.5em;
-    	padding: 20px;
-    }
-
-    #MeLink{
-      background-color: rgba(255,255,255, 0);
-      border: 10px solid #1C1D21;
-      border-radius: 80px;
-      bottom: 20px;
-      height: 80px;
-      overflow: hidden;
-      position: fixed;
-      right: 20px;
-      width: 80px;
-      z-index: 2;
-
-      transition: background-color .5s;
-    }
-
-    #MeLink:hover{
-      background-color: rgba(255,255,255, .25);
-    }
-
-    #Me{
-      border: 10px solid #1C1D21;
-      border-radius: 80px;
-      bottom: 20px;
-      height: 80px;
-      position: fixed;
-      right: 20px;
-      width: 80px;
-      z-index: 1;
-    }
-
-</style>
+          #Arrows i:active {
+              background-color: rgb(0, 95, 173);
+          }
+      </style>
+   </head>
+   <body>
+      <div class = "window2" id = "w2">
+      <div id="Slideshow">
+      <div id="header-container">
+         <h1>Data Analysis</h1>
+      </div>
+      <div id="img-container">
+         <div class="slider-container">
+            <h2 class = "header2">Person</h2>
+            <div class="imgs" id="Slider">
+               <img src="figs/1.png" class = "galaxy"/>
+               <img src="figs/2.png" class = "galaxy"/>
+               <img src="figs/3.png" class = "galaxy"/>
+               <img src="figs/4.png" class = "galaxy"/>
+            </div>
+         </div>
+         <div class="slider-container">
+            <h2 class = "header1"> Group</h2>
+            <div class="imgs" id="Slider2">
+               <img src="figs/1-1.png" class = "galaxy2"/>
+               <img src="figs/1-2.png" class = "galaxy2"/>
+               <img src="figs/1-3.png" class = "galaxy2"/>
+               <img src="figs/1-4.png" class = "galaxy2"/>
+            </div>
+         </div>
+      </div>
+      <div id="Arrows">
+         <i id="Prev" class="slide-controls fas fa-arrow-left"></i>
+         <i id="back">Back to Earth</i>
+         <i id="Next" class="slide-controls fas fa-arrow-right"></i>
+      </div>
+      <script type = "text/javascript">
+         //##############Slideshow
+         var slideIndex = 1;
+         
+         //The showSlides(n) function code is from  ##################
+         function showSlides(n) {
+             var slides = document.getElementsByClassName("galaxy");
+             var slides2 =  document.getElementsByClassName("galaxy2");
+             if (n > slides.length) {slideIndex = 1}
+         
+             if (n < 1) {slideIndex = slides.length}
+             var i;
+             for (i = 0; i < slides.length; i++) {
+                 slides[i].style.display = "none";
+                 slides2[i].style.display = "none";
+             }
+             slides[slideIndex-1].style.display = "block";
+             slides2[slideIndex-1].style.display = "block";
+         }
+         //The showSlides(n) function code is from https://www.w3schools.com/howto/howto_js_slideshow.asp ##################
+         
+         showSlides(slideIndex);
+         function plusSlides() {
+             showSlides(slideIndex += 1);
+         }
+         function minusSlides() {
+             showSlides(slideIndex -= 1);
+         }
+         document.getElementById("Prev").addEventListener("click", minusSlides);
+         document.getElementById("Next").addEventListener("click", plusSlides);
+         
+         back.onclick = function(){
+           window.location.href = "index.html";
+         }
+      </script>
+   </body>
 </html>
