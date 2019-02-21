@@ -3963,7 +3963,8 @@ function initialize(flag, nextPos) {
 	const bar = document.getElementById("bar");
 	const stroke = document.getElementById("stroke");
 	const markerButton = document.getElementById("marker");
-	const heatButton = document.getElementById("heat");
+    const heatButton = document.getElementById("heat");
+    const legend = document.getElementById("legend-wrapper");
 
 	const nextHandler = () => {
         index++;
@@ -3998,12 +3999,14 @@ function initialize(flag, nextPos) {
 			markerButton.innerHTML = "Hide Friend Marker";
 			for (let i = 0; i < markers.length; i++) {
 				markers[i].setMap(map);
-			}
+            }
+            legend.style.visibility = "visible";
 		} else {
 			markerButton.innerHTML = "Show Friend Marker";
 			for (let i = 0; i < markers.length; i++) {
 				markers[i].setMap(null);
-			}
+            }
+            legend.style.visibility = "hidden";
 		}
 	};
 	const heatMapHandler = () => {
@@ -4025,5 +4028,6 @@ function initialize(flag, nextPos) {
 	bar.onclick = barHandler;
 	stroke.onclick = strokeHandler;
 	markerButton.onclick = markerHandler;
-	heatButton.onclick = heatMapHandler;
+    heatButton.onclick = heatMapHandler;
+    legend.style.visibility = "visible";
 }
