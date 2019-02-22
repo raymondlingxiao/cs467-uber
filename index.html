@@ -9,33 +9,38 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
       <style>
-         #map{
-			display: flex;
-			justify-content: center;
-			width: 100%;
+         #map {
+            display: flex;
+            justify-content: center;
+            width: 100%;
          }
-         #button-wrapper{
-			background: rgba(45, 45, 45, 0.98);
-			display: flex;
-			width: 300px;
-			flex-direction: column;
-			justify-content: space-around;
+
+         #button-wrapper {
+            background: rgba(45, 45, 45, 0.98);
+            display: flex;
+            width: 300px;
+            flex-direction: column;
+            justify-content: space-around;
          }
+
          .btn-primary {
-			margin-bottom: 15px;
-			background: none;
-			border: none;
-			box-shadow: none !important;
-			border-radius: 0px !important;
+            margin-bottom: 15px;
+            background: none;
+            border: none;
+            box-shadow: none !important;
+            border-radius: 0px !important;
          }
+
          .btn-primary:hover {
-			background: #6bf;
-			border: none;
+            background: rgb(60, 154, 231);
+            border: none;
          }
+
          .btn-primary:active {
-			background: rgb(29, 139, 230) !important;
-			border: none;
+            background: rgb(37, 133, 211) !important;
+            border: none;
          }
+
          #legend-wrapper {
             display: flex;
             justify-content: center;
@@ -44,8 +49,10 @@
             color: white;
             width: 100%;
             bottom: 10%;
+            opacity: 1;
+            transition: opacity 0.2s ease-in-out;
          }
-      
+
          .legend {
             display: flex;
             justify-content: center;
@@ -57,6 +64,7 @@
          .legend img {
             width: 18%;
          }
+
          .legend p {
             width: 70%;
             text-align: center;
@@ -64,6 +72,7 @@
             font-size: 15px;
             font-weight: 700;
          }
+
          #content-wrapper {
             display: flex;
             flex-direction: column;

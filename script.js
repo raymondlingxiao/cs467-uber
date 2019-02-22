@@ -4000,13 +4000,13 @@ function initialize(flag, nextPos) {
 			for (let i = 0; i < markers.length; i++) {
 				markers[i].setMap(map);
             }
-            legend.style.visibility = "visible";
+            legend.style.opacity = 1;
 		} else {
 			markerButton.innerHTML = "Show Friend Marker";
 			for (let i = 0; i < markers.length; i++) {
 				markers[i].setMap(null);
             }
-            legend.style.visibility = "hidden";
+            legend.style.opacity = 0;
 		}
 	};
 	const heatMapHandler = () => {
@@ -4029,5 +4029,5 @@ function initialize(flag, nextPos) {
 	stroke.onclick = strokeHandler;
 	markerButton.onclick = markerHandler;
     heatButton.onclick = heatMapHandler;
-    legend.style.visibility = "visible";
+    legend.style.opacity = 1;
 }
